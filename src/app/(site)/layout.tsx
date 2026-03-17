@@ -20,7 +20,7 @@ import PreLoader from "@/components/Common/PreLoader";
 
 /** Route → VWO account ID for SmartCode 3.0 SYNC. Replace with real account IDs when ready. */
 const VWO_SYNC_ACCOUNT_IDS: Record<string, string> = {
-  "/test-sc30-sync1": "0000001",
+  "/test-sc30-sync1": "1209681",
   "/test-sc30-sync2": "0000002",
   "/test-sc30-sync3": "0000003",
 };
