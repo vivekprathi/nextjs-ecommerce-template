@@ -1,0 +1,158 @@
+skip to:contentpackage searchsign in
+❤
+Pro
+Teams
+Pricing
+Documentation
+npm
+Search packages
+Search
+vwo-smartcode-nextjs
+TypeScript icon, indicating that this package has built-in type declarations
+1.4.2 • Public • Published 3 months ago
+Next.js component for VWO SmartCode integration
+npm version
+
+Overview
+The VWO SmartCode Next.js package enables seamless integration of VWO SmartCode into Next.js applications. This component is designed to work with both Page Router and App Router, allowing developers to integrate VWO SmartCode efficiently.
+
+Installation
+Install the package using npm or yarn:
+
+# via npm
+npm install vwo-smartcode-nextjs
+
+# via yarn
+yarn add vwo-smartcode-nextjs
+Usage
+Page Router (Legacy pages/ Directory)
+For applications using the Page Router, add the VWOScript component inside _document.js (or _document.tsx if using TypeScript) to include it in the <head> of your HTML document.
+
+// pages/_document.js
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { VWOScript } from 'vwo-smartcode-nextjs';
+
+class MyDocument extends Document {
+  render() {
+    return (
+      <Html>
+        <Head>
+          <VWOScript accountId="YOUR_ACCOUNT_ID" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
+App Router (app/ Directory)
+For applications using the App Router, include the VWOScript component in layout.tsx to ensure it loads correctly within the <head> of your HTML document.
+
+// app/layout.tsx
+import { VWOScript } from 'vwo-smartcode-nextjs';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <VWOScript accountId="YOUR_ACCOUNT_ID" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
+Using Nonce
+To add a nonce attribute for Content Security Policy:
+
+<VWOScript
+  accountId="YOUR_ACCOUNT_ID"
+  scriptAttributes={{
+    nonce: 'your-nonce-value',
+  }}
+/>
+Props
+The VWOScript component accepts the following props:
+
+Prop	Type	Required	Default	Description
+accountId	string	✅ Yes	null	Your VWO account ID
+type	'ASYNC' | 'SYNC'	No	'ASYNC'	Type of VWO script loading
+settingsTimeout	number	No	2000	Timeout for settings initialization
+hideElement	string	No	'body'	CSS selector for the element to be hidden
+hideElementStyle	string	No	'opacity:0 !important;filter:alpha(opacity=0) !important;background:white !important;transition:none !important;'	CSS styles applied to the hidden element
+backgroundColor	string	No	'white'	Background color used when hiding body element
+scriptAttributes	Record<string, string>	No	{}	Additional attributes to be added to the script tag. Note: id will be overridden and referrerPolicy will be overridden in case of SYNC SmartCode
+linkAttributes	Record<string, string>	No	{}	Additional attributes to be added to the link tag.
+Authors
+Apoorv Tiwari
+Development and Testing
+Install Dependencies
+yarn install
+Compile TypeScript to JavaScript
+yarn build
+Contributing
+We welcome contributions to improve this package! Please read our contributing guidelines before submitting a PR.
+
+Code of Conduct
+Our Code of Conduct outlines expectations for all contributors and maintainers.
+
+License
+Apache License, Version 2.0
+
+© 2025 Wingify Software Pvt. Ltd.
+
+Readme
+Keywords
+vwosmartcodenextjs
+Package Sidebar
+Install
+npm i vwo-smartcode-nextjs
+
+
+Repository
+github.com/wingify/vwo-smartcode-nextjs
+
+Homepage
+github.com/wingify/vwo-smartcode-nextjs#readme
+
+Weekly Downloads
+21,183
+
+Version
+1.4.2
+
+License
+Apache-2.0
+
+Unpacked Size
+51.2 kB
+
+Total Files
+13
+
+Last publish
+3 months ago
+
+Collaborators
+vwointegration
+Analyze security with SocketCheck bundle sizeView package healthExplore dependencies
+Report malware
+Footer
+Support
+Help
+Advisories
+Status
+Contact npm
+Company
+About
+Blog
+Press
+Terms & Policies
+Policies
+Terms of Use
+Code of Conduct
+Privacy
+Viewing vwo-smartcode-nextjs version 1.4.2
