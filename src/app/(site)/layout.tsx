@@ -20,9 +20,9 @@ import { VwoSc30SyncTagHead } from "@/components/HeadScripts/VwoSc30SyncTagHead"
 
 /** Pathname → VWO SmartCode 3.0 SYNC head component (ref-style: raw scripts, no package). */
 const HEAD_COMPONENTS: Record<string, React.ReactNode> = {
-  "/test-sc30-sync1": <VwoSc30SyncTagHead accountId="1209681" />,
-  "/test-sc30-sync2": <VwoSc30SyncTagHead accountId="1209810" />,
-  "/test-sc30-sync3": <VwoSc30SyncTagHead accountId="1209813" />,
+  "/test-sc30-sync1": <VwoSc30SyncTagHead accountId="1209894" />,
+  "/test-sc30-sync2": <VwoSc30SyncTagHead accountId="1209855" />,
+  "/test-sc30-sync3": <VwoSc30SyncTagHead accountId="1209900" />,
 };
 
 export default function RootLayout({
